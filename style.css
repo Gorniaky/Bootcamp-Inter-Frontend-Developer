@@ -2,6 +2,8 @@ body {
   background: #0d1117;
   color: #c9d1d9;
   font-family: Verdana;
+  max-width: 90%;
+  margin: auto;
 }
 
 .photo {
@@ -36,6 +38,7 @@ a {
 .post_content {
   margin: 0;
   margin-bottom: 15px;
+  text-align: justify;
 }
 
 .post_image {
