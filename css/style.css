@@ -1,16 +1,12 @@
 body {
   background: #0d1117;
   color: #c2d0d8;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .navbar {
-  background: #161b22;
+  background: #8eafd1;
   font-size: 30px;
-}
-
-.quemsomos {
-  background: #1b301b;
 }
 
 .margin {
@@ -18,8 +14,20 @@ body {
   padding-top: 10px;
 }
 
+.quemsomos {
+  background: #032030;
+}
+
 .parceiros {
-  background: midnightblue;
+  background: none;
+}
+
+.servicos {
+  background: none;
+}
+
+.footer {
+  background: black;
 }
 
 /** 
