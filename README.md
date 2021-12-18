@@ -11,5 +11,5 @@
 ## CSS
 
 - [x] Introdução - Lesson #6
-- [ ] Estilizando elementos
-- [ ] Dimensões e alinhamento
+- [x] Estilizando elementos, textos e listas - Lesson #7
+- [ ] Dimensões e alinhamento - Lesson #8
