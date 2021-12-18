@@ -3,4 +3,5 @@
 ## Bootsrap
 
 - [x] Navbar - Lesson #2
-- [ ] Containers
+- [x] Containers - Lesson #3
+- [ ] Imagens em containers
