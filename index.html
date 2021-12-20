@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Banco</title>
+</head>
+
+<body>
+  <div>
+    <select name="tipo" id="account_type">
+      <option value="current_type">Conta corrente</option>
+      <option value="savings_type">Conta poupança</option>
+    </select>
+    <input type="number" value="1234" name="agencia" id="agency_number">
+    <input type="number" value="12345678" name="conta" id="account_number">
+    <button type="submit" id="login">Login</button>
+  </div>
+
+  <div>
+    <p><span>Conta: </span><span id="account"></span></p>
+    <p><span>Saldo: $</span><span id="balance"></span></p>
+    <p><span id="card_type"></span><span id="card_number"></span></p>
+  </div>
+
+  <div>
+    <button type="submit" id="withdraw">Saque</button>
+    <input type="number" id="bank_value" value="1">
+    <button type="submit" id="deposit">Depósito</button>
+  </div>
+
+  <p id="operation_result"></p>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

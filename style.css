@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(21, 22, 27);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+
+button {
+  background: transparent;
+  border-radius: 3px;
+  color: wheat;
+}
+
+input {
+  background: transparent;
+  color: wheat;
+}
+
+select {
+  background: transparent;
+  color: wheat;
+}
