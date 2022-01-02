@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from '../button'
 
 const Card = () => {
 
@@ -18,17 +19,14 @@ const Card = () => {
         Featured
       </div>
       <div className="card-body">
-        <button
-          type="button"
-          className="btn btn-danger"
-          onClick={Rem}>
+        <Button onClick={Rem}
+          className="btn btn-danger">
           Remover
-        </button>
-        <button type="button"
-          className="btn btn-success"
-          onClick={Add}>
+        </Button>
+        <Button onClick={Add}
+          className="btn btn-success">
           Adicionar
-        </button>
+        </Button>
         <p className="card-text">{value}</p>
 
       </div>
