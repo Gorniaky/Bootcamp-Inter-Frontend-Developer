@@ -17,5 +17,12 @@ module.exports = {
         sourceType: "module",
     },
     plugins: ["react"],
-    rules: {},
+    rules: {
+		'no-extra-semi': 'warn',
+		'no-mixed-spaces-and-tabs': 'warn',
+		'no-undef': 'warn',
+		'no-unused-vars': 'warn',
+		'no-unreachable': 'warn',
+        'react/prop-types': 'warn'
+    },
 };
