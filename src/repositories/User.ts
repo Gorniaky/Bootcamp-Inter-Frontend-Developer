@@ -12,13 +12,18 @@ export default new class {
   }
 
   async findById(uuid: string): Promise<User> {
-    const query = `
+    try {
+      const query = `
     SELECT uuid, username
     FROM application_user
     WHERE uuid = $1
     `;
-    const { rows } = await db.query<User>(query, [uuid])
-    return rows[0];
+      const { rows } = await db.query<User>(query, [uuid])
+      return rows[0];
+    } catch (error) {
+      console.error(error)
+      throw new DatabaseError('Erro na consulta por ID', error);
+    }
   }
 
   async create(user: User): Promise<string> {
