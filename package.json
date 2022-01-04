@@ -1,0 +1,20 @@
+{
+  "name": "bootcamp-inter-frontend-developer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gorniaky/Bootcamp-Inter-Frontend-Developer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gorniaky/Bootcamp-Inter-Frontend-Developer/issues"
+  },
+  "homepage": "https://github.com/Gorniaky/Bootcamp-Inter-Frontend-Developer#readme"
+}
