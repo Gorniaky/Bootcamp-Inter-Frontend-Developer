@@ -20,4 +20,16 @@ export default new class {
     const { rows } = await db.query<User>(query, [uuid])
     return rows[0];
   }
+
+  async create(user: User): Promise<string> {
+    const query = `
+    INSERT INTO application_user (
+      username,
+      password
+    ) VALUES ($1, crypt($2, 'salt'))
+    RETURNING uuid
+    `;
+    const { rows } = await db.query<{ uuid: string }>(query, [user.username, user.password]);
+    return rows[0].uuid;
+  }
 }
