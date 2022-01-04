@@ -32,4 +32,22 @@ export default new class {
     const { rows } = await db.query<{ uuid: string }>(query, [user.username, user.password]);
     return rows[0].uuid;
   }
+
+  async update(user: User): Promise<void> {
+    const query = `
+    UPDATE application_user SET
+      username = $1,
+      password = crypt($2, 'salt')
+    WHERE uuid = $3
+    `;
+    await db.query(query, [user.username, user.password, user.uuid]);
+  }
+
+  async deleteById(uuid: string): Promise<void> {
+    const query = `
+    DELETE FROM application_user 
+    WHERE uuid = $1
+    `;
+    await db.query(query, [uuid]);
+  }
 }
