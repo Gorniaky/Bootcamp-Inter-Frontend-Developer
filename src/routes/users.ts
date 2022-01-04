@@ -8,18 +8,19 @@
 
 import { NextFunction, Request, Response, Router } from "express";
 import { StatusCodes } from "http-status-codes";
-import UserRepo from '../repositories/user'
+import UserRepo from '../repositories/user';
 
 const usersRoute = Router();
 
 usersRoute.get('/users', async (req: Request, res: Response, next: NextFunction) => {
   const users = await UserRepo.findAllUsers();
-  res.status(StatusCodes.OK).send({ users })
+  res.status(StatusCodes.OK).send(users)
 })
 
-usersRoute.get('/users/:uuid', (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
+usersRoute.get('/users/:uuid', async (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
   const { uuid } = req.params;
-  res.status(StatusCodes.OK).send({ uuid })
+  const user = await UserRepo.findById(uuid);
+  res.status(StatusCodes.OK).send(user)
 })
 
 usersRoute.post('/users', (req: Request, res: Response, next: NextFunction) => {
