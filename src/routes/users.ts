@@ -23,7 +23,7 @@ usersRoute.get('/users/:uuid', async (req: Request<{ uuid: string }>, res: Respo
     const user = await UserRepo.findById(uuid);
     res.status(StatusCodes.OK).send(user)
   } catch (error) {
-    res.sendStatus(StatusCodes.BAD_REQUEST)
+    next(error)
   }
 })
 

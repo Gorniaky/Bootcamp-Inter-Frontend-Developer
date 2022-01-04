@@ -1,4 +1,5 @@
 import express from "express";
+import errorHandler from "./middlewares/error.handler";
 import statusRoute from "./routes/status";
 import usersRoute from "./routes/users";
 
@@ -13,3 +14,5 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(usersRoute)
 app.use(statusRoute)
+
+app.use(errorHandler)
