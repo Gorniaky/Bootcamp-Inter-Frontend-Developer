@@ -1,4 +1,5 @@
 import db from '../db';
+import DatabaseError from '../models/errors/database.error';
 import User from '../models/user';
 
 export default new class {
@@ -19,6 +20,22 @@ export default new class {
     `;
     const { rows } = await db.query<User>(query, [uuid])
     return rows[0];
+  }
+
+  async findByUsernameAndPassword(username: string, password: string): Promise<User | undefined> {
+    try {
+      const query = `
+      SELECT uuid, username
+      FROM application_user
+      WHERE username = $1
+      AND password = crypt($2, 'salt')
+      `;
+      const { rows } = await db.query<User>(query, [username, password]);
+      return rows[0]
+    } catch (error) {
+      throw new DatabaseError('Erro na consulta por credenciais', error);
+    }
+
   }
 
   async create(user: User): Promise<string> {
