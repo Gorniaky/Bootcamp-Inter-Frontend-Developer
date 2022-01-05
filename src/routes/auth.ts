@@ -1,7 +1,8 @@
 import { NextFunction, Request, Response, Router } from "express";
+import { StatusCodes } from "http-status-codes";
+import JWT from 'jsonwebtoken';
 import ForbiddenError from "../models/errors/forbidden.error";
 import UserRepo from '../repositories/user';
-import JWT from 'jsonwebtoken';
 
 const authRoute = Router();
 
@@ -24,8 +25,14 @@ authRoute.post('/token', async (req: Request, res: Response, next: NextFunction)
     if (!username || !password)
       throw new ForbiddenError('Credenciais não preenchidas.');
 
-      const user = await UserRepo.findByUsernameAndPassword(username, password)
+    const user = await UserRepo.findByUsernameAndPassword(username, password);
 
+    if (!user)
+      throw new ForbiddenError('Usuário ou senha inválidos.');
+
+    const jwt = JWT.sign({ username: user.username }, 'secret_key', { subject: user?.uuid })
+
+    res.status(StatusCodes.OK).json({ token: jwt })
   } catch (error) {
     next(error);
   }
