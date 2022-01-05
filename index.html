@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/main.min.css">
+  <link rel="stylesheet" href="assets/css/pokedex.min.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
@@ -15,67 +16,60 @@
 <body>
   <header>
     <div class="container">
-      <h2 class="logo">NETFLIX</h2>
+      <h2 class="logo">POKEDEX</h2>
       <nav>
         <a href="#">Início</a>
-        <a href="#">Séries</a>
-        <a href="#">Filmes</a>
-        <a href="#">Documentários</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <div class="filme-principal">
+    <div class="main" id='main'>
       <div class="container">
-        <h3 class="title">HOUSE OF CARDS</h3>
-        <p class="description">Nada pode impedir o político sem escrúpulos Frank Underwood de conquistar Washington.
-          Assista agora a nova temporada de House of Cards que está imperdível.</p>
+        <h3 class="title">BULBASAUR</h3>
+        <p class="description">There is a plant seed on its back right from the day this Pokémon is born. The seed
+          slowly grows larger.</p>
         <div class="buttons">
-          <button role="button" class="button">
-            <i class="fas fa-play"></i>
-            ASSISTIR AGORA
-          </button>
-          <button role="button" class="button">
-            <i class="fas fa-info-circle"></i>
-            MAIS INFORMAÇÕES
-          </button>
+          <button role="button" class="button rounded-pill background-color-grass">GRASS</button>
+          <button role="button" class="button rounded-pill background-color-poison">POISON</button>
         </div>
       </div>
-    </div>
+      <div class="container">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="">
+      </div>
   </main>
 
   <div class="carrossel-filmes">
     <div class="owl-carousel owl-theme">
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini1.jpg" alt="">
+      <div class="item poke" id="1" onClick="showPoke(1)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini2.jpg" alt="">
+      <div class="item poke" id="2" onClick="showPoke(2)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini3.jpg" alt="">
+      <div class="item poke" id="3" onClick="showPoke(3)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini4.jpg" alt="">
+      <div class="item poke" id="4" onClick="showPoke(4)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini5.jpg" alt="">
+      <div class="item poke" id="5" onClick="showPoke(5)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini6.jpg" alt="">
+      <div class="item poke" id="6" onClick="showPoke(6)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini7.jpg" alt="">
+      <div class="item poke" id="7" onClick="showPoke(7)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini8.jpg" alt="">
+      <div class="item poke" id="8" onClick="showPoke(8)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini9.jpg" alt="">
+      <div class="item poke" id="9" onClick="showPoke(9)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png" alt="">
       </div>
-      <div class="item">
-        <img class="box-filme" src="assets/img/mini10.jpg" alt="">
+      <div class="item poke" id="10" onClick="showPoke(10)">
+        <img class="box-filme" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png" alt="">
       </div>
     </div>
   </div>
@@ -84,6 +78,7 @@
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/pokedex.js"></script>
 </body>
 
 </html>
