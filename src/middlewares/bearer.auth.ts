@@ -14,14 +14,18 @@ export default async function bearerauth(req: Request, res: Response, next: Next
     if (auth_type !== 'Bearer' || !token)
       throw new ForbiddenError('Tipo de autenticação inválido.');
 
-    const tokenPayload = JWT.verify(token, 'secret_key');
+    try {
+      const tokenPayload = JWT.verify(token, 'secret_key');
 
-    if (typeof tokenPayload !== 'object' || !tokenPayload.sub)
+      if (typeof tokenPayload !== 'object' || !tokenPayload.sub)
+        throw new ForbiddenError('Credenciais inválidas.');
+
+      req.user = { uuid: tokenPayload.sub };
+
+      next();
+    } catch (error) {
       throw new ForbiddenError('Credenciais inválidas.');
-
-    req.user = { uuid: tokenPayload.sub };
-
-    next();
+    }
   } catch (error) {
     next(error);
   }

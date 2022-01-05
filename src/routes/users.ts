@@ -18,7 +18,7 @@ usersRoute.get('/users', bearerauth, async (req: Request, res: Response, next: N
   res.status(StatusCodes.OK).send(users)
 })
 
-usersRoute.get('/users/:uuid', async (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
+usersRoute.get('/users/:uuid', bearerauth, async (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
   try {
     const { uuid } = req.params;
     const user = await UserRepo.findById(uuid);
@@ -28,13 +28,13 @@ usersRoute.get('/users/:uuid', async (req: Request<{ uuid: string }>, res: Respo
   }
 })
 
-usersRoute.post('/users', async (req: Request, res: Response, next: NextFunction) => {
+usersRoute.post('/users', bearerauth, async (req: Request, res: Response, next: NextFunction) => {
   const newUser = req.body;
   const uuid = await UserRepo.create(newUser);
   res.status(StatusCodes.OK).send({ uuid });
 })
 
-usersRoute.put('/users/:uuid', async (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
+usersRoute.put('/users/:uuid', bearerauth, async (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
   const { uuid } = req.params;
   const newUser = req.body;
   newUser.uuid = uuid;
@@ -43,7 +43,7 @@ usersRoute.put('/users/:uuid', async (req: Request<{ uuid: string }>, res: Respo
   res.status(StatusCodes.OK).send(newUser);
 })
 
-usersRoute.delete('/users/:uuid', async (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
+usersRoute.delete('/users/:uuid', bearerauth, async (req: Request<{ uuid: string }>, res: Response, next: NextFunction) => {
   const { uuid } = req.params;
   await UserRepo.deleteById(uuid)
   res.sendStatus(StatusCodes.OK)
