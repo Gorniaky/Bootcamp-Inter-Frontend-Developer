@@ -1,5 +1,4 @@
 import express from "express";
-import basicauth from "./middlewares/basic.auth";
 import errorHandler from "./middlewares/error.handler";
 import authRoute from "./routes/auth";
 import statusRoute from "./routes/status";
@@ -14,9 +13,8 @@ app.listen(3000, () => {
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use(basicauth)
-app.use(usersRoute)
 app.use(statusRoute)
 app.use(authRoute)
+app.use(usersRoute)
 
 app.use(errorHandler)
