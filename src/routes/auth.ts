@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response, Router } from "express";
 import ForbiddenError from "../models/errors/forbidden.error";
 import UserRepo from '../repositories/user';
+import JWT from 'jsonwebtoken';
 
 const authRoute = Router();
 
